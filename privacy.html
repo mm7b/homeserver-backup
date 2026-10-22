@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — homeserver-backup</title>
+<style>
+  :root {
+    --bg: #f5f7f7; --fg: #15201f; --muted: #5c6b6d; --line: #dbe3e3; --accent: #0d6c66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0d1314; --fg: #e3ecec; --muted: #90a1a3; --line: #243031; --accent: #5bc8bd; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 56px 20px 72px;
+  }
+  main { max-width: 38rem; margin: 0 auto; }
+  h1 { font-size: 1.7rem; line-height: 1.2; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 32px; }
+  h2 { font-size: 1.05rem; margin: 30px 0 8px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy policy</h1>
+  <p class="sub">homeserver-backup · last updated 23 October 2026</p>
+
+  <p>homeserver-backup is a personal script run by one person on their own home server. It has no
+    users other than its author, no accounts, no sign-up, and no server of its own.</p>
+
+  <h2>What data it handles</h2>
+  <p>The script reads configuration files from the home server it runs on, packs them into a single
+    archive, encrypts that archive, and uploads it to a folder in the author's own Google Drive. The
+    archives are encrypted before they leave the machine, so their contents are not readable in
+    Google Drive without the author's passphrase.</p>
+
+  <h2>Google account access</h2>
+  <p>The Google OAuth client is used only to write these archive files into, and read them back from,
+    the author's own Google Drive, through <a href="https://rclone.org/">rclone</a>. It is never used
+    to access anyone else's account. No Google user data is collected, stored elsewhere, transferred
+    to third parties, sold, or used for advertising, analytics, profiling, or training models.</p>
+
+  <h2>Other people's data</h2>
+  <p>The script collects nothing from visitors of this page: no cookies, no analytics, no trackers,
+    no logs. These pages are static files served by GitHub Pages, whose own
+    <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">privacy
+    statement</a> covers whatever GitHub records when you request them.</p>
+
+  <h2>Retention</h2>
+  <p>Encrypted archives are kept in the author's Google Drive on a rolling schedule — daily copies for
+    two weeks, weekly for ten weeks, monthly for about a year — and are deleted automatically once
+    they fall outside that window. They can be deleted at any time by the author, who is the only
+    person with access to them.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy can be raised as an issue at
+    <a href="https://github.com/mm7b/homeserver-backup">github.com/mm7b/homeserver-backup</a>.</p>
+
+  <footer><a href="index.html">← homeserver-backup</a></footer>
+</main>
+</body>
+</html>

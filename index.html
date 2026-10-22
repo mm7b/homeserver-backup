@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>homeserver-backup</title>
+<style>
+  :root {
+    --bg: #f5f7f7; --fg: #15201f; --muted: #5c6b6d; --line: #dbe3e3; --accent: #0d6c66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0d1314; --fg: #e3ecec; --muted: #90a1a3; --line: #243031; --accent: #5bc8bd; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 56px 20px 72px;
+  }
+  main { max-width: 38rem; margin: 0 auto; }
+  h1 { font-size: 1.7rem; line-height: 1.2; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 32px; }
+  h2 { font-size: 1.05rem; margin: 32px 0 8px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>homeserver-backup</h1>
+  <p class="sub">A personal backup script for one home media server.</p>
+
+  <p>This is a small private utility, run by its author on a single machine at home. Once a night it
+    collects the configuration files of that server — settings, application databases, credentials —
+    packs them into one archive, encrypts the archive, and uploads it to the author's own Google Drive
+    so the server can be rebuilt if its disk fails.</p>
+
+  <p>Uploading is done with <a href="https://rclone.org/">rclone</a>, which is why this project has a
+    Google OAuth client at all. The client is used by one person, to write files into that one person's
+    own Drive.</p>
+
+  <h2>What it touches</h2>
+  <ul>
+    <li>A single folder in the owner's Google Drive, holding the encrypted archives.</li>
+    <li>Nothing else: no other Google service, no other account, no other person's data.</li>
+  </ul>
+
+  <h2>Who it is for</h2>
+  <p>Nobody but its author. It is published here only because Google requires an OAuth application to
+    have a home page and a privacy policy, which you can read on the
+    <a href="privacy.html">privacy page</a>.</p>
+
+  <footer>
+    Source and contact: <a href="https://github.com/mm7b/homeserver-backup">github.com/mm7b/homeserver-backup</a>
+  </footer>
+</main>
+</body>
+</html>
